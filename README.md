@@ -35,13 +35,34 @@ git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
 
 ```
 include /etc/nginx/conf.d/*.conf;
+
+### http{
+###     ...
+###     include mime.types;
+###     include vhost.conf;
+###     ....
+###     include servers/video.conf;
+###     ....
+### }
 ```
 
 3. host.conf (server块)增加配置文件
 
 ```
+
 include /etc/nginx/bots.d/blockbots.conf;
 include /etc/nginx/bots.d/ddos.conf;
+
+### 
+### server {
+###  server_name localhost
+###  ....
+###  include /etc/nginx/bots.d/blockbots.conf;
+###  include /etc/nginx/bots.d/ddos.conf;
+### 
+###  ....
+### }
+
 ```
 
 4. 重启服务
@@ -67,4 +88,22 @@ sh> curl: (52) Empty reply from server
 ```
 cd /etc/nginx 
 git pull
+```
+
+## 文件结构
+```
+├── README.md
+├── bots.d
+│   ├── bad-referrer-words.conf
+│   ├── blacklist-domains.conf
+│   ├── blacklist-ips.conf
+│   ├── blacklist-user-agents.conf
+│   ├── blockbots.conf
+│   ├── custom-bad-referrers.conf
+│   ├── ddos.conf
+│   ├── whitelist-domains.conf
+│   └── whitelist-ips.conf
+└── conf.d
+    ├── botblocker-nginx-settings.conf
+    └── globalblacklist.conf
 ```
