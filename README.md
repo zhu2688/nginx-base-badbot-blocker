@@ -18,6 +18,7 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 
 ### 本人大部分站点运行在 centos6/7 Tenginx(v2.2.2)上 标准nginx版本并没有测试过
 ### 理论上只要配置不报错，就可以运行
+### 本人配置参数
 ### nginx -VVV
 ### --with-select_module --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
 
