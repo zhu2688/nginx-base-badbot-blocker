@@ -20,7 +20,9 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 ### 理论上只要配置不报错，就可以运行
 ### 本人配置参数
 ### nginx -VVV
-### --with-select_module --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
+### --with-select_module --with-http_stub_status_module  
+    --with-http_ssl_module --with-http_gzip_static_module
+    --with-http_ssl_module --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
 =======
 
 ```
