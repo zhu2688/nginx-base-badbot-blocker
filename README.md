@@ -16,10 +16,8 @@ nginx -VVV | grep "ngx_http_map_module"
 nginx -VVV | grep "ngx_http_limit_conn_module"
 nginx -VVV | grep "ngx_http_limit_req_module"
 
-centos example
-##yum install GeoIP-devel
-##./configure --with-http_geoip_module --with-ipv6 --with-http_map_module=shared
-##make && make install
+### 本人大部分站点运行在 centos6/7 Tenginx(v2.2.2)上 标准nginx版本并没有测试过
+### 理论上只要配置不报错，就可以运行
 
 ```
 
@@ -29,8 +27,8 @@ centos example
 
 ```
 git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
-
 ```
+
 2. nginx.conf (http块)增加配置文件
 
 ```
@@ -41,7 +39,7 @@ include /etc/nginx/conf.d/*.conf;
 ###     include mime.types;
 ###     include vhost.conf;
 ###     ....
-###     include servers/video.conf;
+###     include servers/site.conf;
 ###     ....
 ### }
 ```
@@ -49,7 +47,6 @@ include /etc/nginx/conf.d/*.conf;
 3. host.conf (server块)增加配置文件
 
 ```
-
 include /etc/nginx/bots.d/blockbots.conf;
 include /etc/nginx/bots.d/ddos.conf;
 
@@ -59,7 +56,7 @@ include /etc/nginx/bots.d/ddos.conf;
 ###  ....
 ###  include /etc/nginx/bots.d/blockbots.conf;
 ###  include /etc/nginx/bots.d/ddos.conf;
-### 
+###  ...
 ###  ....
 ### }
 
