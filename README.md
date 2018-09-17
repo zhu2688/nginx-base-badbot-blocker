@@ -22,7 +22,7 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 ### nginx -VVV
 ### --with-select_module --with-http_stub_status_module  
     --with-http_ssl_module --with-http_gzip_static_module
-    --with-http_ssl_module --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
+    --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
 =======
 
 ```
@@ -40,6 +40,7 @@ git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
 ```
 include /etc/nginx/conf.d/*.conf;
 
+### eg:
 ### http{
 ###     ...
 ###     include mime.types;
@@ -56,14 +57,14 @@ include /etc/nginx/conf.d/*.conf;
 include /etc/nginx/bots.d/blockbots.conf;
 include /etc/nginx/bots.d/ddos.conf;
 
-### 
+### eg:
 ### server {
-###  server_name localhost
-###  ....
-###  include /etc/nginx/bots.d/blockbots.conf;
-###  include /etc/nginx/bots.d/ddos.conf;
-###  ...
-###  ....
+###     server_name localhost
+###     ....
+###     include /etc/nginx/bots.d/blockbots.conf;
+###     include /etc/nginx/bots.d/ddos.conf;
+###     ...
+###     ....
 ### }
 
 ```
@@ -97,16 +98,16 @@ git pull
 ```
 ├── README.md
 ├── bots.d
-│   ├── bad-referrer-words.conf
-│   ├── blacklist-domains.conf
-│   ├── blacklist-ips.conf
-│   ├── blacklist-user-agents.conf
-│   ├── blockbots.conf
-│   ├── custom-bad-referrers.conf
-│   ├── ddos.conf
-│   ├── whitelist-domains.conf
-│   └── whitelist-ips.conf
+│   ├── bad-referrer-words.conf          自定义referrer黑名单配置
+│   ├── blacklist-domains.conf           自定义domains黑名单配置
+│   ├── blacklist-ips.conf               ips黑名单地址
+│   ├── blacklist-user-agents.conf       自定义UA配置
+│   ├── blockbots.conf                   主要逻辑处理
+│   ├── custom-bad-referrers.conf        自定义referrer白名单配置
+│   ├── ddos.conf                        限流配置
+│   ├── whitelist-domains.conf           自定义domains白名单配置
+│   └── whitelist-ips.conf               自定义ips白名单配置 
 └── conf.d
-    ├── botblocker-nginx-settings.conf
-    └── globalblacklist.conf
+    ├── botblocker-nginx-settings.conf    连接数限制配置相关
+    └── globalblacklist.conf              主要配置文件(定义)
 ```
