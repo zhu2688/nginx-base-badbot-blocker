@@ -35,7 +35,7 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
 ```
 
-2. nginx.conf (http块)增加配置文件
+2. nginx.conf (http块)增加配置文件 需要注意的是,放在最前面加载
 
 ```
 include /etc/nginx/conf.d/*.conf;
@@ -44,10 +44,9 @@ include /etc/nginx/conf.d/*.conf;
 ### http{
 ###     ...
 ###     include mime.types;
+###     include /etc/nginx/conf.d/*.conf;
+###     ....
 ###     include vhost.conf;
-###     ....
-###     include servers/site.conf;
-###     ....
 ### }
 ```
 
