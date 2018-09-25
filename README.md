@@ -35,7 +35,7 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
 ```
 
-2. nginx.conf (http块)增加配置文件 需要注意的是,放在最前面加载
+2. nginx.conf (http块)增加配置文件 需要注意的是,放在**最前面**加载
 
 ```
 include /etc/nginx/conf.d/*.conf;
@@ -80,10 +80,10 @@ server nginx restart
 ```
 ### www.domains 替换成自己的域名测试
 
-sh> curl -A "Googlebot" http://www.domains
-sh> 有内容输出
 sh> curl -A "360Spider" http://www.domains
 sh> curl: (52) Empty reply from server
+sh> curl -A "Googlebot" http://www.domains
+sh> 有内容输出
 
 ```
 
