@@ -16,7 +16,7 @@ nginx -VVV | grep "ngx_http_map_module"
 nginx -VVV | grep "ngx_http_limit_conn_module"
 nginx -VVV | grep "ngx_http_limit_req_module"
 
-### 本人大部分站点运行在 centos6/7 Tenginx(v2.2.2)上 标准nginx版本并没有测试过
+### 本人大部分站点运行在 centos6/7 Tengine(v2.2.3)上 标准nginx版本并没有测试过
 ### 理论上只要配置不报错，就可以运行
 ### 本人配置参数
 ### nginx -VVV
