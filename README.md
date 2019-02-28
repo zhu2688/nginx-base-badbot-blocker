@@ -72,7 +72,7 @@ include /etc/nginx/bots.d/ddos.conf;
 
 ```
 /usr/local/nginx/sbin/nginx -t
-server nginx restart
+service nginx restart
 ```
 
 5. 检查效果
