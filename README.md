@@ -22,7 +22,7 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 ### nginx -VVV
 ### --with-select_module --with-http_stub_status_module  
     --with-http_ssl_module --with-http_gzip_static_module
-    --with-pcre=/usr/local/src/pcre --with-http_geoip_module --with-ipv6
+    --with-pcre=/usr/local/src/pcre --with-http_geoip_module
 =======
 
 ```
