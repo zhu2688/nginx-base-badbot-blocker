@@ -16,7 +16,7 @@ nginx -VVV | grep "ngx_http_map_module"
 nginx -VVV | grep "ngx_http_limit_conn_module"
 nginx -VVV | grep "ngx_http_limit_req_module"
 
-### 本人大部分站点运行在 centos6/7 Tengine(v2.2.3)上 标准nginx版本并没有测试过
+### 本人大部分站点运行在 centos6/7 Tengine上 标准nginx版本并没有测试过
 ### 理论上只要配置不报错，就可以运行
 ### 本人配置参数
 ### nginx -VVV
@@ -98,7 +98,6 @@ git pull
 ├── README.md
 ├── bots.d
 │   ├── bad-referrer-words.conf          自定义referrer黑名单配置
-│   ├── blacklist-domains.conf           自定义domains黑名单配置
 │   ├── blacklist-ips.conf               ips黑名单地址
 │   ├── blacklist-user-agents.conf       自定义UA配置
 │   ├── blockbots.conf                   主要逻辑处理
