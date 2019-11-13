@@ -29,22 +29,22 @@ nginx -VVV | grep "ngx_http_limit_req_module"
 
 ## 使用方法
 
-1. git clone 项目所有文件 到你的 /etc/nginx 目录下
+1. git clone 项目所有文件 到你的 /data/nginx 目录下
 
 ```
-git clone https://github.com/zhu2688/nginx-base-badbot-blocker /etc/nginx
+git clone https://github.com/zhu2688/nginx-base-badbot-blocker /data/nginx
 ```
 
 2. nginx.conf (http块)增加配置文件 需要注意的是,放在**最前面**加载
 
 ```
-include /etc/nginx/conf.d/*.conf;
+include /data/nginx/conf.d/*.conf;
 
 ### eg:
 ### http{
 ###     ...
 ###     include mime.types;
-###     include /etc/nginx/conf.d/*.conf;
+###     include /data/nginx/conf.d/*.conf;
 ###     ....
 ###     include vhost.conf;
 ### }
@@ -53,15 +53,15 @@ include /etc/nginx/conf.d/*.conf;
 3. host.conf (server块)增加配置文件
 
 ```
-include /etc/nginx/bots.d/blockbots.conf;
-include /etc/nginx/bots.d/ddos.conf;
+include /data/nginx/bots.d/blockbots.conf;
+include /data/nginx/bots.d/ddos.conf;
 
 ### eg:
 ### server {
 ###     server_name localhost
 ###     ....
-###     include /etc/nginx/bots.d/blockbots.conf;
-###     include /etc/nginx/bots.d/ddos.conf;
+###     include /data/nginx/bots.d/blockbots.conf;
+###     include /data/nginx/bots.d/ddos.conf;
 ###     ...
 ###     ....
 ### }
